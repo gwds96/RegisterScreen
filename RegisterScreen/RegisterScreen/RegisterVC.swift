@@ -31,6 +31,27 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         self.enterButton.clipsToBounds = true
         passLabel.text = ""
         retypeLabel.text = ""
+        nameText.center.x -= view.bounds.width
+        mailText.center.x -= view.bounds.width
+        passText.center.x -= view.bounds.width
+        retypeText.center.x -= view.bounds.width
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1) {
+            self.nameText.center.x += self.view.bounds.width
+        }
+        
+        UIView.animate(withDuration: 1) {
+            self.mailText.center.x += self.view.bounds.width
+        }
+        UIView.animate(withDuration: 1) {
+            self.passText.center.x += self.view.bounds.width
+        }
+        
+        UIView.animate(withDuration: 1) {
+            self.retypeText.center.x += self.view.bounds.width
+        }
     }
     
     func checkPasswordValidation(_ password: String) -> Bool {
@@ -85,14 +106,17 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                 testPassRepeatEmpty = false
             }else {
                 retypeLabel.text = ""
-                testPassRepeatEmpty = true
             }
         }
     }
     
     @IBAction func enterButton(_ sender: Any) {
-        if testUserEmpty && testPassEmpty && testPassRepeatEmpty {
-            userAndPassDelegate?.returnUserAndPass(nameText.text!, mailText.text!, passText.text!)
+        if retypeText.text == passText.text {
+            testPassRepeatEmpty = true
+        }
+        if testUserEmpty && testMailEmpty && testPassEmpty && testPassRepeatEmpty {
+            userAndPassDelegate?.returnUserAndPass(
+                nameText.text!, mailText.text!, passText.text!)
             navigationController?.popViewController(animated: true)
         }
     }

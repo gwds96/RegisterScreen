@@ -7,6 +7,6 @@ class LoginSuccessVC: UIViewController {
     var nameUser: String?
     
     override func viewDidLoad() {
-        nameLabel.text = "Hello \(nameUser ?? "")" 
+        nameLabel.text = "Hello \(nameUser ?? "")"
     }
 }

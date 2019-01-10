@@ -17,6 +17,23 @@ class LoginVC: UIViewController {
         self.enterButton.layer.borderColor = UIColor.red.cgColor
         self.enterButton.layer.cornerRadius = 10
         self.enterButton.clipsToBounds = true
+        userText.center.x -= view.bounds.width
+        passText.center.x -= view.bounds.width
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1) {
+            self.userText.center.x += self.view.bounds.width
+        }
+        
+        UIView.animate(withDuration: 1) {
+            self.passText.center.x += self.view.bounds.width
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        userText.center.x -= view.bounds.width
+        passText.center.x -= view.bounds.width
     }
     
     @IBAction func enterButton(_ sender: Any) {
@@ -29,7 +46,8 @@ class LoginVC: UIViewController {
                 noticeLabel.text = ""
                 let cellIdentifier = "LoginSuccessVC"
                 let vc = UIStoryboard(name: "Main", bundle: nil)
-                let screen = vc.instantiateViewController(withIdentifier: cellIdentifier) as! LoginSuccessVC
+                let screen = vc.instantiateViewController(
+                    withIdentifier: cellIdentifier) as! LoginSuccessVC
                 screen.nameUser = user[i]
                 navigationController?.pushViewController(screen, animated: true)
                 break
@@ -42,7 +60,8 @@ class LoginVC: UIViewController {
     @IBAction func signUpButton(_ sender: Any) {
         let cellIdentifier = "RegisterVC"
         let vc = UIStoryboard(name: "Main", bundle: nil)
-        let screen = vc.instantiateViewController(withIdentifier: cellIdentifier) as! RegisterVC
+        let screen = vc.instantiateViewController(
+            withIdentifier: cellIdentifier) as! RegisterVC
         screen.userAndPassDelegate = self
         navigationController?.pushViewController(screen, animated: true)
     }

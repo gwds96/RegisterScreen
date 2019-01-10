@@ -224,6 +224,13 @@
                                     <constraint firstAttribute="height" constant="50" id="gqG-Pi-Ty8"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-lock-50" translatesAutoresizingMaskIntoConstraints="NO" id="Pwh-Nf-Uys">
+                                <rect key="frame" x="54" y="222" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="2Fm-fA-omN"/>
+                                    <constraint firstAttribute="height" constant="50" id="Lyo-PX-J79"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjO-qb-Nkg">
                                 <rect key="frame" x="112.5" y="272" width="150" height="34"/>
                                 <constraints>
@@ -279,13 +286,6 @@
                                 <color key="textColor" red="0.9893302321434021" green="0.18216234445571899" blue="0.015694752335548401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-lock-50" translatesAutoresizingMaskIntoConstraints="NO" id="Pwh-Nf-Uys">
-                                <rect key="frame" x="54" y="222" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="2Fm-fA-omN"/>
-                                    <constraint firstAttribute="height" constant="50" id="Lyo-PX-J79"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84494537115097046" green="0.95610529184341431" blue="0.94538027048110962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
