@@ -31,7 +31,7 @@ class LoginVC: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         userText.center.x -= view.bounds.width
         passText.center.x -= view.bounds.width
     }
